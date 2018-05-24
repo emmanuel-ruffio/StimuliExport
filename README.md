@@ -39,4 +39,13 @@ The output file <mystimulifile_DDRD.stim> would be for example:
 009198           0           0           0           0           0           0           0           0
 009199           0           0           0           1           0           0           0           0
 009786           0           0           0           1           0           0           0           0
+009787           0           0           0           0           0           0           0           0
+010237           0           0           0           0           0           0           0           0
+010238           0           0           0           1           0           0           0           0
+010241           0           0           0           1           0           0           0           0
+(...)
 ```
+
+With Octave, matlab, gnuplot, etc it is straightfoward to get something like this:
+![Atmel studio Simuli file export](/ExportExample.png)
+
