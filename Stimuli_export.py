@@ -34,7 +34,7 @@ args = parser.parse_args();
 
 if len(args.f) != len(args.m):
     if len(args.m) == 0:
-        args.m = [0xFF];
+        args.m = ["0xFF"];
     if len(args.m) > 1:
         raise ValueError("Invalid number of mask occurence {}".format(args.m));
     else:
@@ -110,7 +110,7 @@ try:
                             if args.s is None:
                                 if lCurrentTime > 0:
                                     print("{:>#06}".format(0) + "".join(["{: >12}".format(v) for v in get_stringFromValue(lCurrentValue, args)]), file=fout);
-                                    print("{:>#06}".format(lCurrentTime-1) + "".join(["{: >12}".format(v) for v in get_stringFromValue(lCurrentValue, args)]), file=fout);
+                                    print("{:>#06}".format(lCurrentTime) + "".join(["{: >12}".format(v) for v in get_stringFromValue(lCurrentValue, args)]), file=fout);
 
                                 print("{:>#06}".format(lCurrentTime) + "".join(["{: >12}".format(v) for v in get_stringFromValue(lNewValue, args)]), file=fout);
                                 lLastValue = lNewValue;
@@ -119,12 +119,12 @@ try:
                                 lLastValue = lNewValue;
                             elif lCurrentTime > args.s:
                                 print("{:>#06}".format(args.s) + "".join(["{: >12}".format(v) for v in get_stringFromValue(lCurrentValue, args)]), file=fout);
-                                print("{:>#06}".format(lCurrentTime-1) + "".join(["{: >12}".format(v) for v in get_stringFromValue(lCurrentValue, args)]), file=fout);
+                                print("{:>#06}".format(lCurrentTime) + "".join(["{: >12}".format(v) for v in get_stringFromValue(lCurrentValue, args)]), file=fout);
                                 print("{:>#06}".format(lCurrentTime) + "".join(["{: >12}".format(v) for v in get_stringFromValue(lNewValue, args)]), file=fout);
                                 lLastValue = lNewValue;
 
                         elif lNewValue != lLastValue:
-                            print("{:>#06}".format(lCurrentTime-1) + "".join(["{: >12}".format(v) for v in get_stringFromValue(lLastValue, args)]), file=fout);
+                            print("{:>#06}".format(lCurrentTime) + "".join(["{: >12}".format(v) for v in get_stringFromValue(lLastValue, args)]), file=fout);
                             print("{:>#06}".format(lCurrentTime) + "".join(["{: >12}".format(v) for v in get_stringFromValue(lNewValue, args)]), file=fout);
                             lLastValue = lNewValue;
 
